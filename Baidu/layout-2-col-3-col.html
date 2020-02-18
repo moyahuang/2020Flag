@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two column/Three column layout each with 3 methods</title>
+    <style>
+        /* general setup */
+        *{
+            box-sizing: border-box;
+        }
+        .wrapper{
+            overflow: auto;
+        }
+        .left{
+            border: 5px solid #4cb4e7;
+        }
+        .middle{
+            border: 5px solid #ffc096;
+        }
+        .right{
+            border: 5px solid #ffee93;
+        }
+
+        .float-left{
+            float: left;
+        }
+
+        .float-right{
+            float: right;
+        }
+
+        .left-width-30{
+            width: 30%;
+        }
+
+        .right-width-70{
+            width: 70%;
+        }
+
+        .fixed-200px{
+            width: 200px;
+        }
+        .right-stretch{
+            width: calc(100% - 200px);
+        }
+        .middle-stretch{
+            width: calc(100% - 400px);
+        }
+
+        /* requirement 1 : use float on the two parts */
+        
+        /* requirement 1 : use position */
+        .wrapper-position{
+            position: relative;
+        }
+        .right-position-left-30{
+            position: absolute;
+            width: 70%;
+            left: 30%;
+            top: 0;
+        }
+
+        /* requirement 1 : use flexbox */
+        .wrapper-flex{
+            display: flex;
+        }
+        .left-flex{
+            flex: 3;
+        }
+        .right-flex{
+            flex: 7;
+        }
+
+        /* requirement 2: use float */
+
+
+        .right-position-left-200px{
+            position: absolute;
+            left: 200px;
+            top: 0;
+        }
+
+        .right-position-right-0{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- requirement -->
+    
+    <div>
+    <h3>分别尝试使用Float、Position或者Flexbox来实现如下需求：</h3>
+    <ul>
+        <li>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</li>
+        <li>实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</li>
+        <li>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</li>
+        <li>
+            实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化</li>
+    </ul>
+    </div>
+    <!-- requirement 1: float -->
+    <h2>requirement 1: use float</h2>
+    <div class="wrapper">
+        <div class="left float-left left-width-30">left content</div>
+        <div class="right float-left right-width-70">right content</div>
+    </div>
+    <h2>requirement 1: use position</h2>
+    <div class="wrapper wrapper-position">
+        <div class="left left-width-30">left content</div>
+        <div class="right right-width-70 right-position-left-30">right content</div>
+    </div>
+    <h2>requirement 1: use flexbox</h2>
+    <div class="wrapper wrapper-flex">
+        <div class="left left-flex">left content</div>
+        <div class="right right-flex">right content</div>
+    </div>
+    <h2>requirement 2: use float</h2>
+    <div class="wrapper">
+        <div class="left fixed-200px float-left">left content</div>
+        <div class="right float-left right-stretch">right content</div>
+    </div>
+    <h2>requirement 2: use position</h2>
+    <div class="wrapper wrapper-position">
+        <div class="left fixed-200px">left content</div>
+        <div class="right right-stretch right-position-right-0 ">right content</div>
+    </div>
+    <h2>requirement 2: use flexbox</h2>
+    <div class="wrapper wrapper-flex">
+        <div class="left fixed-200px">left content</div>
+        <div class="right right-stretch">right content</div>
+    </div>
+    <h2>requirement 3: use float</h2>
+    <div class="wrapper">
+        <div class="right fixed-200px float-right">right content</div>
+        <div class="left right-stretch float-right">left content</div>
+    </div>
+    <h2>requirement 3: use position</h2>
+    <div class="wrapper wrapper-position">
+        <div class="left right-stretch">left content</div>
+        <div class="right fixed-200px right-position-right-0">right content</div>
+    </div>
+    <h2>requirement 3: use flexbox</h2>
+    <div class="wrapper wrapper-flex">
+        <div class="left right-stretch">left content</div>
+        <div class="right fixed-200px">right content</div>
+    </div>
+    <h2>requirement 4: use float</h2>
+    <div class="wrapper">
+        <div class="left float-left fixed-200px">left content</div>
+        <div class="middle float-left middle-stretch">middle content</div>
+        <div class="right float-left fixed-200px">right content</div>
+    </div>
+    <h2>requirement 4: use position</h2>
+    <div class="wrapper wrapper-position">
+        <div class="left fixed-200px">left content</div>
+        <div class="middle middle-stretch right-position-left-200px">middle content</div>
+        <div class="right fixed-200px right-position-right-0">right content</div>
+    </div>
+    <h2>requirement 4: use flexbox</h2>
+    <div class="wrapper wrapper-flex">
+        <div class="left fixed-200px">left content</div>
+        <div class="middle middle-stretch">middle content</div>
+        <div class="right fixed-200px">right content</div>
+    </div>
+    <h2>requirement 5: use float</h2>
+    <div class="wrapper">
+        <div class="left float-left fixed-200px">left content</div>
+        <div class="middle  float-left fixed-200px">middle content</div>
+        <div class="right float-left middle-stretch">right content</div>
+    </div>
+    <h2>requirement 5: use position</h2>
+    <div class="wrapper wrapper-position">
+        <div class="left fixed-200px">left content</div>
+        <div class="middle fixed-200px right-position-left-200px">middle content</div>
+        <div class="right middle-stretch right-position-right-0">right content</div>
+    </div>
+    <h2>requirement 5: use flexbox</h2>
+    <div class="wrapper wrapper-flex">
+        <div class="left fixed-200px">left content</div>
+        <div class="middle fixed-200px ">middle content</div>
+        <div class="right middle-stretch">right content</div>
+    </div>
+</body>
+</html>
