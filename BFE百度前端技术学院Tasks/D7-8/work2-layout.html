@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 960px;
+            margin: 0 auto;
+        }
+        header {
+            color: white;
+            background-color:#383838;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header .logo{
+            line-height: 50px;
+        }
+
+        header a{
+            color: white;
+        }
+        header nav ul{
+            display: flex;
+            list-style-type: none;
+        }
+
+        header nav li{
+            margin: 10px;
+            font-size: 0.8em;
+        }
+
+        .banner{
+            height: 200px;
+            background-color: rgb(76, 141, 12);
+            position: relative;
+        }
+
+        .banner ol{
+            display: flex;
+            list-style-type: none;
+            width: 100px;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: absolute;
+            bottom: 10px;
+            right: 80px;
+        }
+
+        .banner li{
+            background-color: rgba(255, 255, 255, 0.5);
+            height: 30px;
+            line-height: 30px;
+            padding: 0 5px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            vertical-align: bottom;
+        }
+        .banner li.active{
+            padding-top: 10px;
+            background-color: rgba(255, 255, 255, 0.767);
+
+        }
+        footer{
+            text-align: center;
+            background-color: #989898;
+            height: 60px;
+            color: white;
+            font-size: 0.7em; 
+            padding: 5px;   
+        }
+
+        .content-wrapper .tabs{
+            display: flex;
+            border-bottom: 1px solid #a8a8a8;
+            height: 50px;
+            padding-left: 75px;
+        }
+
+        .content-wrapper .tabs button{
+            padding: 0 10px;
+            margin-top: 10px;
+            border-radius: 8px 8px 0 0;
+            background-color: #ededed;
+            border: 1px solid #dbdada;
+            cursor: pointer;
+        } 
+
+        .content-wrapper .tabs button:focus,
+        .content-wrapper .tabs button:hover{
+            background-color: white;
+        }
+
+        .content-wrapper .tabs .active{
+            background-color: white;
+            border-bottom: none;
+        }
+
+        .content-wrapper .content{
+            padding: 10px 70px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            vertical-align: center;
+        }
+        .content-wrapper article{
+            border: 1px solid #afafaf;
+            flex: 1 250px;
+            height: 200px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h2 class="logo">Logo</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="banner">
+            <ol>
+                <li><a>1</a></li>
+                <li class="active"><a>2</a></li>
+                <li><a>3</a></li>
+                <li><a>4</a></li>
+            </ol>
+        </div>
+        <div class="content-wrapper">
+            <div class="tabs">
+                <button class="active">HOME</button>
+                <button>PROFILE</button>
+                <button>ABOUT</button>
+            </div>
+            <section class="content">
+                <article>This is Content 1</article>
+                <article>Maybe Content 2</article>
+                <article>Content 3</article>
+                <article>Content 4</article>
+                <article>Content 5</article>
+                <article>Content 6</article>
+                <article>Content 7</article>
+                <article>Content 8</article>
+                <article>Content 9</article>
+                <article>Content 10</article>
+            </section>
+        </div>
+        <footer>&copy;2018 ife.baidu.com</footer>
+    </div>
+</body>
+</html>
