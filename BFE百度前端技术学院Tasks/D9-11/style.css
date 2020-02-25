@@ -1,0 +1,335 @@
+/* general settup */
+@font-face{
+    font-family: 'Montserrat-ExtraLight';
+    src: url('fonts/Montserrat-ExtraLight.otf');
+}
+@font-face{
+    font-family: 'Montserrat-Light';
+    src: url('fonts/Montserrat-Light.otf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat-ExtraLight", sans-serif;
+    font-size: 16px;
+}
+h2{
+    font-size: 2.75em;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+}
+.flex-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    /* width: 1200px; */
+}
+.page{
+    border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+}
+.icon{
+    margin-right: 20px;
+}
+.button{
+    height: 50px;
+    border-radius: 2px;
+    background-color: #fff;
+    font-size: 0.75em;
+    padding: 10px;
+    margin-right: 30px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat-Light';
+}
+input{
+    appearance: none;
+}
+#page-one{
+    color: rgba(255, 255, 255, 0.7);
+    background-image: url('images/Background-1.jpg');
+    height: 990px;
+}
+#page-one .wrapper{
+    padding: 115px;
+}
+#page-one h1{
+    color: #fff;
+    padding-top: 100px;
+    font-size: 3.8em;
+}
+
+#page-one .wrapper > p{
+    padding: 100px;
+    font-size: 1.25em;
+}
+
+#page-one .form-group{
+    padding: 50px;
+    border-radius: 2px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+#page-one .form-group h6{
+    line-height: 28px;
+    color: #fff;
+}
+
+#page-one .form-group p{
+    font-size: 0.75em;
+    padding: 5px 0 45px 0;
+}
+
+#page-one .form-group input[type="text"]{
+    width: 292px;
+	height: 50px;
+    border-radius: 2px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    background: none;
+    font-size: 0.85em;
+    padding: 10px;
+    margin-right: 30px;
+}
+
+#page-two{
+    height: 710px;
+    color: #141414;
+    padding: 60px 0 140px 0;
+}
+#page-two .title{
+    width: 660px;
+    margin: 0 auto;
+    line-height: 52px;
+}
+#page-two .title p, h6{
+    font-family: 'Montserrat-Light';
+}
+#page-two .title p{
+    font-size: 0.75em;
+}
+
+#page-two article{
+    text-align: left;
+    margin: 30px 80px;
+    flex: 1 420px;
+    display: flex;
+}
+
+#page-two article p{
+    margin-top: 25px;
+}
+
+#page-three{
+    background: url(images/Background-2.jpg);
+    height: 800px;
+    color: #fff;
+    padding-left: 320px;
+    padding-top: 180px;
+}
+#page-three .wrapper{
+    text-align: left;
+}
+#page-three h2, #page-three p{
+    width: 400px;
+}
+#page-three h2{
+    font-weight: normal;
+}
+#page-three p{
+    margin: 48px 0;
+    line-height: 28px;
+    font-size: 1.25em;
+    opacity: 0.7;
+    letter-spacing: -1px;
+}
+#page-three input[type='button']:nth-of-type(2){
+    color: #fff;
+    background: none;
+    opacity: 0.8;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+#page-four{
+    height: 580px;
+    padding: 100px;
+}
+
+#page-four article{
+    margin: 85px 40px;
+    flex: 1 250px;
+}
+#page-four article p{
+    margin-top: 42px;
+    text-align: justify;
+}
+#page-five{
+    height: 1000px; 
+    padding: 100px 0;
+}
+#page-five article{
+    align-items: center;
+    margin-bottom: 85px;
+}
+#page-five article h5{
+    line-height: 32px;
+}
+#page-five article p{
+    line-height: 28px;
+    margin-top: 10px;
+}
+#page-five article .content{
+    width: 350px;
+    margin: 0 50px;
+    text-align: left;
+}
+#page-six{
+    height: 1084px;
+    padding: 100px;
+}
+#page-six .flex-wrapper{
+    margin: 0 auto;
+    justify-content: center;
+}
+#page-six .content{
+    width: 700px;
+    margin: 0 auto;
+}
+#page-six .content p{
+    margin: 35px 5px;
+}
+#page-six .user{
+    position: relative;
+}
+#page-six .user-image img{
+    width: 470px;
+    height: 340px;
+    margin: 25px 15px;
+    cursor: pointer;
+}
+
+#page-six .cover{
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    z-index: 1;
+    width: 470px;
+    height: 340px;
+    color: #fff;
+    background-color: rgba(20, 20, 20, 0.5);
+    cursor: pointer;
+    opacity: 0;
+}
+#page-six .cover:hover{
+    opacity: 1;
+}
+
+#page-six .cover h6{
+    margin-top: 100px;
+}
+#page-six .cover p{
+    opacity: 0.6;
+    margin: 20px 0 40px;
+}
+#page-seven{
+    height: 700px;
+    color: #141414;
+}
+#page-seven .flex-wrapper{
+    padding: 70px;
+    margin: 0 auto;
+    width: 1200px;  
+    align-items: center;
+}
+#page-seven article{
+    height: 560px;
+}
+#page-seven article.left{
+	border-radius: 10px;
+    border: solid 1px rgba(20,20,20,0.1);
+    padding: 50px;
+    width: 470px;
+}
+#page-seven article.left h6{
+    text-align: center;
+}
+#page-seven article.left> div{
+    margin-top: 30px;
+}
+#page-seven article.left input, #page-seven article.left textarea{
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+	border-radius: 2px;
+	border: solid 1px rgba(28,26,25,0.2);
+}
+#page-seven article.left textarea{
+    height: 140px;
+    padding-top: 20px;
+}
+#page-seven article.left input[type='button']{
+    color: #fff;
+    background-color: #141414;
+    opacity: 1;
+}
+#page-seven article.right{
+    width: 350px;
+    margin-left: 100px;
+}
+#page-seven article.right h2{
+    margin-top: 80px;
+}
+#page-seven article.right p{
+    margin: 39px 0;
+    line-height: 26px;
+    opacity: 0.7;
+}
+#page-seven article.right > div{
+    margin-top: 30px;
+    line-height: 26px;
+	letter-spacing: 0px;
+    color: #141414;
+    display: flex;
+    font-family: 'Montserrat-Light';
+}
+footer{
+    height: 410px;
+    background-color: #141414;
+    display: flex;
+    padding: 100px;
+    color: #fff;
+    text-decoration: none;
+}
+footer article{
+    flex: 1 150px;
+}
+footer article:last-of-type{
+    flex: 1 250px;
+}
+footer article:last-of-type p{
+    margin: 30px 0;
+    opacity: 0.5;
+    font-size: 1.25em;
+}
+footer article:last-of-type li{
+    display: inline-block;
+    margin-right: 30px;
+}
+footer h6{
+    font-size: 0.85em;
+    color: #fff;
+    opacity: 1;
+}
+footer ul{
+    list-style-type: none;
+}
+footer .links li{
+    margin-top: 30px;
+}
+
+footer a{
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.4;
+}
