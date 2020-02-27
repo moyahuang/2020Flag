@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        /* general style */
+        *{
+            box-sizing: border-box;
+        }
+        h1,h2,h3{
+            text-align: center;
+        }
+        section{
+            width: 1200px;
+            height: 700px;
+            padding: 100px;
+            margin: 0 auto; 
+            border-top: 1px solid rgb(20,20,20,0.2);
+            border-bottom: 1px solid rgb(20,20,20,0.2);
+            
+        }
+        /* style for page one */
+        .flex-box{
+            /* flow */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .col-2 article{
+            /* flow */
+            display: flex;
+            flex-direction: column;
+
+            /* box-model */
+            width: 470px;
+            height: 560px;
+            min-width: 350px;
+        }
+        .col-2 article.left{
+            /* flow: main-axis alignment */
+            justify-content: space-evenly;
+
+            /* box-model */
+            border: 1px solid rgb(20,20,20,0.3);
+            border-radius: 10px;
+            padding: 50px;
+
+            /* typography */
+            text-align: center;
+        }
+        .col-2 article.left input, article.left textarea{
+            /* flow */
+            display: block;
+
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+        }
+        .col-2 article.right{
+            /* flow: main-axis alignment */
+            justify-content: center;
+
+            /* box-model */
+            padding: 0 60px;
+        }
+        .col-2 article.right ul{
+            /* box-model: override padding */
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .col-2 article.right li{
+            /* box-model */
+            margin-top: 20px;
+        }
+        .col-2 article.right li>img, article.right li>span{
+            /* flow */
+            display: inline-block;
+        }
+        .col-2 article.right li>img{
+            /* box-model */
+            margin-right: 20px;
+        }
+
+        /* style for section two */
+        .col-3{
+            justify-content: center;
+        }
+        .col-3 article{
+            display: block;
+
+            min-width: 200px;
+        }
+        .col-3 article>img{
+            display: inline-block;
+        }
+        .col-3 article{
+            padding: 40px;
+
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox实战</h1>
+    <h3>双栏横向+纵向布局: 用到的flexbox布局属性有flex-direction: row/column justify-content: center/space-evenly</h3>
+    <section class="flex-box col-2">
+        <article class="left">
+            <h4>Feel Free to Contact Us</h4>
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="email">
+            <textarea name="message" id="message" placeholder="message"></textarea>
+            <input type="button" value="SEND">
+        </article>
+        <article class="right">
+            <h2>Contacts</h2>
+            <p>Make any design your own using the Style Editor. 
+                Personalize fonts, colors, and layouts to create 
+                the custom look you want.
+            </p>
+            <ul>
+                <li><img src="../BFE百度前端技术学院Tasks/D9-11/images/MapIcon.png" alt="MapIcon"><span>360 King Street<br/>Feastrvale Trevose, PA 19057</span></li>
+                <li><img src="../BFE百度前端技术学院Tasks/D9-11/images/PhoneIcon.png" alt="PhoneIcon"><span>(755) 564-84-12</span></li>
+                <li><img src="../BFE百度前端技术学院Tasks/D9-11/images/MailIcon.png" alt="MailIcon"><span>youname@mail.com</span></li>
+            </ul>
+        </article>
+    </section>
+    <h3>三栏布局: 用到的属性同上</h3>
+    <section>
+        <h2>Try Our Awesome Products</h2>
+        <div class="flex-box col-3">
+            <article>
+                <img src="../BFE百度前端技术学院Tasks/D9-11/images/Singleton.png" alt="Singleton">
+                <p>
+                    Li Jun, a China Academy of Engineering academician and also 
+                    director of the alliance's experts' committee, 
+                    said that China will also launch design guidance for smart cars, 
+                    smart map architecture and standards for test grounds.
+                </p>
+            </article>
+            <article>
+                <img src="../BFE百度前端技术学院Tasks/D9-11/images/Hero.png" alt="Hero">
+                <p>
+                    Li Jun, a China Academy of Engineering academician and also 
+                    director of the alliance's experts' committee, 
+                    said that China will also launch design guidance for smart cars, 
+                    smart map architecture and standards for test grounds.
+                </p>
+            </article>
+            <article>
+                <img src="../BFE百度前端技术学院Tasks/D9-11/images/Portland.png" alt="Portland">
+                <p>
+                    Li Jun, a China Academy of Engineering academician and also 
+                    director of the alliance's experts' committee, 
+                    said that China will also launch design guidance for smart cars, 
+                    smart map architecture and standards for test grounds.
+                </p>
+            </article>
+        </div>
+    </section>
+    <h3>附件:flexbox知识点大纲</h3>
+    <ul><li>如何用：使用场景<ul><li>使用父容器实现对其子项的大小、布局方向控制，用于组件和小规模的布局。能够为大小未知，动态变化的子元素灵活分配空间。</li></ul></li><li>怎么用<ul><li>父容器上的属性<ul><li>display:
+        指定容器盒子<ul><li>inline-flex
+        容器呈行内状</li><li>容器呈块状</li></ul></li><li>flex-flow:
+        缩写<ul><li>flex-direction:
+        指定主轴方向<ul><li>row | column</li></ul></li><li>flex-wrap:
+        是否换行 <ul><li>nowrap
+        默认。（子项默认单行显示）</li><li>wrap
+        自动换行</li><li>wrap-reverse
+        自下而上排序
+        4 5 6
+        1 2 3</li></ul></li></ul></li><li>justify-content:
+        主轴对齐方式<ul><li>flex-start | center | flex-end | space-between | space-around | space-evenly          <ul><li>这些属性在指定了flex项size后才有效果，否则flex项会根据元素个数撑满flex容器</li></ul></li></ul></li><li>align-items:
+        交叉轴单行对齐方式<ul><li>flex-start | center | flex-end | stretch | baseline 
+        默认stretch<ul><li>若元素有-width/-height属性，则stretch无效</li></ul></li></ul></li><li>align-content:
+        交叉轴多行间对齐方式
+        若交换主轴/交叉轴，是否等同于justify-content<ul><li>flex-start | center | flex-end | space-between | space-around | space-evenly</li></ul></li></ul></li><li>子项上的属性<ul><li>flex:
+        子项伸缩<ul><li>flex-grow:<ul><li>数值（不能为负数）</li></ul></li><li>flex-shrink:
+        （可选）<ul><li>数值（不能为负）<ul><li>flex项宽度之和大于容器之和时，按此比例收缩</li></ul></li></ul></li><li>flex-basis:
+        （可选）<ul><li>长度值或关键字（默认为auto)
+        若为0，则内容按flex-grow值分配；若为auto,则空隙按flex-grow值分配</li></ul></li></ul></li><li>order
+        子项次序<ul><li>数值
+        -1 0 2 99</li></ul></li><li>align-self
+        调整/覆盖单个子项对齐方式<ul><li>参见align-items</li></ul></li></ul></li><li>float/clear/vertical-align对flex子项无用</li></ul></li></ul>
+</body>
+</html>
