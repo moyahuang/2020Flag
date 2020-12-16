@@ -1,0 +1,25 @@
+﻿<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.1"><title>文字大纲</title></head><link href="res/icon.png" rel="icon"><div style="font-weight:bold">春招Offer</div><ul><li>6种创建实例的设计模式<ul><li>用new<ul><li>构造函数模式
+this和new<ul><li>优点：可以判断类型
+缺点：实例方法不共用</li></ul></li><li>原型模式
+（原型上定义方法和属性）
+function Person(){}<ul><li>字面量赋值（因constructor属性被覆盖，需要重新定义，并且使用Object.defineProperty还原其可枚举属性）</li><li>逐一赋值
+Person.prototype.xxx=...</li></ul></li><li>动态原型模式=构造函数+原型<ul><li>function Person(name){
+this.name=name; if(this.sayName!='function'){
+Person.prototype.sayName=...
+Person.prototype.anotherFunc=...}
+}
+...
+}</li></ul></li><li>寄生构造函数模式
+（与工厂模式的唯一区别在于用new创建实例，可是为什么呢？）</li></ul></li><li>不用new<ul><li>工厂模式<ul><li>优点：其他模式都有的，封装
+缺点：1. 实例方法不共用，浪费空间 2.返回Object对象 无法判断其实际类型（在面向对象程序设计中是硬伤）
+（虽然可以通过在函数外定以实例方法的方式解决空间浪费的问题，但这样方法任何对象都可访问，破坏了封装性）</li></ul></li><li>稳妥构造函数模式
+注：虽然名字叫构造函数模式但是除了不在函数内部对属性进行赋值外和工厂模式差不多<ul><li>适用场景：安全要求较高，创建实例后，只允许通过接口访问，不允许修改</li></ul></li></ul></li><li>附：判断实例类型的方法
+1. 对象.constructor
+2. instanceof （更适合，原型链类型也为true）
+判断实例本身或者原型链中是否有某个属性
+1. obj.hasOwnProperty("propName")
+2. "propName" in obj
+获取原型
+Object.getPropertyOf(obj)
+
+</li></ul></li></ul><body></body></html>
