@@ -3,7 +3,7 @@
 立下目标
 
 - [x] INFOCOM DEMO VIDEO
-- [ ] 发论文
+- [x] 发论文
 - [x] 找到工作
 
 
